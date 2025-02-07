@@ -59,7 +59,7 @@ import { Employee } from '../employee';
       </mat-form-field>
 
       <mat-radio-group formControlName="level" aria-label="Select an option">
-        <mat-radio-button name="level" value="junior" required 
+        <mat-radio-button name="level" value="junior" required
           >Junior</mat-radio-button
         >
         <mat-radio-button name="level" value="mid"

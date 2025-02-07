@@ -1,10 +1,10 @@
 import { Component, OnInit, WritableSignal } from '@angular/core';
-import { Employee } from '../employee';
-import { EmployeeService } from '../employee.service';
-import { RouterModule } from '@angular/router';
-import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
+import { Employee } from '../employee';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employees-list',
