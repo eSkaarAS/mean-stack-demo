@@ -1,9 +1,9 @@
 import { Component, OnInit, WritableSignal } from '@angular/core';
-import { EmployeeFormComponent } from '../employee-form/employee-form.component';
+import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
-import { MatCardModule } from '@angular/material/card';
+import { EmployeeFormComponent } from './employee-form.component';
 
 @Component({
   selector: 'app-edit-employee',

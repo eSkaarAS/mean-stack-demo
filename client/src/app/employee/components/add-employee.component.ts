@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
-import { EmployeeFormComponent } from '../employee-form/employee-form.component';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
-import { MatCardModule } from '@angular/material/card';
+import { EmployeeFormComponent } from './employee-form.component';
 
 @Component({
   selector: 'app-add-employee',

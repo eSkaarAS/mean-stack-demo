@@ -1,9 +1,9 @@
 import { Component, effect, EventEmitter, input, Output } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { Employee } from '../employee';
 
 @Component({
@@ -62,12 +62,8 @@ import { Employee } from '../employee';
         <mat-radio-button name="level" value="junior" required
           >Junior</mat-radio-button
         >
-        <mat-radio-button name="level" value="mid"
-          >Mid</mat-radio-button
-        >
-        <mat-radio-button name="level" value="senior"
-          >Senior</mat-radio-button
-        >
+        <mat-radio-button name="level" value="mid">Mid</mat-radio-button>
+        <mat-radio-button name="level" value="senior">Senior</mat-radio-button>
       </mat-radio-group>
       <br />
       <button

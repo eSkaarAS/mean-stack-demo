@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { routePaths } from './appRouteTypes';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
-import { EmployeesListComponent } from './employees-list/employees-list.component';
+import { AddEmployeeComponent } from './employee/components/add-employee.component';
+import { EditEmployeeComponent } from './employee/components/edit-employee.component';
+import { EmployeesListComponent } from './employee/components/employees-list.component';
 
 export const routes: Routes = [
   {
@@ -10,6 +10,14 @@ export const routes: Routes = [
     component: EmployeesListComponent,
     title: 'Employees List',
   },
-  { path: routePaths.addEmployee, component: AddEmployeeComponent },
-  { path: routePaths.editEmployee, component: EditEmployeeComponent },
+  {
+    path: routePaths.addEmployee,
+    component: AddEmployeeComponent,
+    title: 'Add Employee',
+  },
+  {
+    path: routePaths.editEmployee,
+    component: EditEmployeeComponent,
+    title: 'Edit Employee',
+  },
 ] as const;

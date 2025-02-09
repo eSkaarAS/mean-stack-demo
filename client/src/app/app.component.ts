@@ -5,6 +5,7 @@ import { InputComponent } from './angular-tutorial/input-component';
 import { OptimizeImageComponent } from './angular-tutorial/optimize-image-component';
 import { OutputComponent } from './angular-tutorial/output-component';
 import { RedirectRouteComponent } from './angular-tutorial/redirect-route-component';
+import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable.component';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,9 @@ import { RedirectRouteComponent } from './angular-tutorial/redirect-route-compon
     MatToolbarModule,
     InputComponent,
     OutputComponent,
-    // DeferComponent,
     OptimizeImageComponent,
     RedirectRouteComponent,
+    ShareHoldersTableComponent,
   ],
   styles: [
     `
@@ -42,6 +43,7 @@ import { RedirectRouteComponent } from './angular-tutorial/redirect-route-compon
     <main>
       <div class="flexDiv">
         <router-outlet></router-outlet>
+        <app-shareHolder-table></app-shareHolder-table>
         <input-component name="Alice" />
         <output-component (addItemEvent)="addItem($event)" />
         <output-component (addItemEvent)="addItemTest($event)" />

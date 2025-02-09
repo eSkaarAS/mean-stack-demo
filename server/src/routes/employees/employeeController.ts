@@ -1,20 +1,23 @@
-import * as express from "express";
+import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
-import { collections } from "./database";
+import { collections } from "../../database";
+import { User } from "../../models/usermodel";
+import { prisma } from "../../server";
 
 export const employeeRouter = express.Router();
 employeeRouter.use(express.json());
 
-employeeRouter.get("/", async (_req, res) => {
+
+export async function getEmployee(req: Request, res: Response) {
     try {
         const employees = await collections?.employees?.find({}).toArray();
         res.status(200).send(employees);
     } catch (error) {
         res.status(500).send(error instanceof Error ? error.message : "Unknown error");
     }
-});
+}
 
-employeeRouter.get("/:id", async (req, res) => {
+export async function getEmployeeById(req: Request, res: Response) {
     try {
         const id = req?.params?.id;
         const query = { _id: new ObjectId(id) };
@@ -28,12 +31,31 @@ employeeRouter.get("/:id", async (req, res) => {
     } catch (error) {
         res.status(404).send(`Failed to find an employee: ID ${req?.params?.id}`);
     }
-});
+}
 
-employeeRouter.post("/", async (req, res) => {
+export async function createEmployee(req: Request, res: Response) {
     try {
         const employee = req.body;
+        const ops = await User.create({
+            email: "123123",
+            firstName: "123",
+            lastName: "123",
+            city: {
+                coordinates: [0, 0],
+            },
+        });
+        console.log(ops);
+        console.log(ops._id)
+
         const result = await collections?.employees?.insertOne(employee);
+
+        const testuser = await prisma.tester.create({
+            data: {
+                name: "Alice",
+                age: 30,
+            },});
+
+        console.log(testuser)
 
         if (result?.acknowledged) {
             res.status(201).send(`Created a new employee: ID ${result.insertedId}.`);
@@ -44,9 +66,9 @@ employeeRouter.post("/", async (req, res) => {
         console.error(error);
         res.status(400).send(error instanceof Error ? error.message : "Unknown error");
     }
-});
+}
 
-employeeRouter.put("/:id", async (req, res) => {
+export async function updateEmployee(req: Request, res: Response) {
     try {
         const id = req?.params?.id;
         const employee = req.body;
@@ -65,9 +87,9 @@ employeeRouter.put("/:id", async (req, res) => {
         console.error(message);
         res.status(400).send(message);
     }
-});
+}
 
-employeeRouter.delete("/:id", async (req, res) => {
+export async function deleteEmployee(req: Request, res: Response) {
     try {
         const id = req?.params?.id;
         const query = { _id: new ObjectId(id) };
@@ -85,4 +107,4 @@ employeeRouter.delete("/:id", async (req, res) => {
         console.error(message);
         res.status(400).send(message);
     }
-});
+}

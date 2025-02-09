@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type UsersCity {
+  coordinates Int[]
+}
+
+/// This collection uses a JSON Schema defined in the database, which requires additional setup for migrations. Visit https://pris.ly/d/mongodb-json-schema for more info.
+model employees {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  level    String
+  name     String
+  position String
+}
+
+model users {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  v         Int       @map("__v")
+  city      UsersCity
+  email     String
+  firstName String
+  lastName  String
+}
+
+
+model Tester {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  age Int
+}
