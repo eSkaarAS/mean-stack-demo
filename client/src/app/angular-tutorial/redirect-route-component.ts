@@ -17,7 +17,7 @@ import { routePaths } from '../appRouteTypes';
     <button
       mat-raised-button
       color="primary"
-      [routerLink]="[routePaths.tester]"
+      [routerLink]="[routePaths.addEmployee]"
     >
       Add a New Employee
     </button>
