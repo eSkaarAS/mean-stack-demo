@@ -5,21 +5,21 @@ import { InputComponent } from './angular-tutorial/input-component';
 import { OptimizeImageComponent } from './angular-tutorial/optimize-image-component';
 import { OutputComponent } from './angular-tutorial/output-component';
 import { RedirectRouteComponent } from './angular-tutorial/redirect-route-component';
-import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable.component';
+import { ShareHoldersTableComponent } from './examples/shareHoldersTable.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-        RouterOutlet,
-        MatToolbarModule,
-        InputComponent,
-        OutputComponent,
-        OptimizeImageComponent,
-        RedirectRouteComponent,
-        ShareHoldersTableComponent,
-    ],
-    styles: [
-        `
+  selector: 'app-root',
+  imports: [
+    RouterOutlet,
+    MatToolbarModule,
+    InputComponent,
+    OutputComponent,
+    OptimizeImageComponent,
+    RedirectRouteComponent,
+    ShareHoldersTableComponent,
+  ],
+  styles: [
+    `
       main {
         display: flex;
         justify-content: center;
@@ -34,8 +34,8 @@ import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable
         gap: 1rem;
       }
     `,
-    ],
-    template: `
+  ],
+  template: `
     <mat-toolbar>
       <span>Employees Management System</span>
     </mat-toolbar>
@@ -52,7 +52,7 @@ import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable
         <redirect-route-component />
       </div>
     </main>
-  `
+  `,
 })
 export class AppComponent {
   title = 'client';
