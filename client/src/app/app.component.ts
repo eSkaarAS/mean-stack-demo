@@ -1,23 +1,11 @@
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
-import { InputComponent } from './angular-tutorial/input-component';
-import { OptimizeImageComponent } from './angular-tutorial/optimize-image-component';
-import { OutputComponent } from './angular-tutorial/output-component';
-import { RedirectRouteComponent } from './angular-tutorial/redirect-route-component';
-import { ShareHoldersTableComponent } from './examples/shareHoldersTable.component';
+import { DemoSidebar } from './layout/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    MatToolbarModule,
-    InputComponent,
-    OutputComponent,
-    OptimizeImageComponent,
-    RedirectRouteComponent,
-    ShareHoldersTableComponent,
-  ],
+  imports: [RouterOutlet, MatToolbarModule, DemoSidebar],
   styles: [
     `
       main {
@@ -36,22 +24,9 @@ import { ShareHoldersTableComponent } from './examples/shareHoldersTable.compone
     `,
   ],
   template: `
-    <mat-toolbar>
-      <span class=" text-3xl">Employees Management System</span>
-    </mat-toolbar>
-    <main>
-      <div class="flexDiv">
-        <router-outlet></router-outlet>
-        <app-shareHolder-table></app-shareHolder-table>
-        <input-component name="Alice" />
-        <output-component (addItemEvent)="addItem($event)" />
-        <output-component (addItemEvent)="addItemTest($event)" />
-        <p>all the way down {{ items.length }}</p>
-        <!-- <defer-component /> -->
-        <optimize-image-component />
-        <redirect-route-component />
-      </div>
-    </main>
+    <demo-sidebar>
+      <router-outlet></router-outlet>
+    </demo-sidebar>
   `,
 })
 export class AppComponent {

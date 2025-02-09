@@ -28,3 +28,8 @@ html {
 :root {
   @include mat.table-overrides(());
 }
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.sidenav-overrides(());
+}
