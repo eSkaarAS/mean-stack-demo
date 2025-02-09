@@ -3,17 +3,16 @@ import { RouterModule } from '@angular/router';
 import { routePaths } from '../appRouteTypes';
 
 @Component({
-  selector: 'redirect-route-component',
-  standalone: true,
-  imports: [RouterModule],
-  styles: [
-    `
+    selector: 'redirect-route-component',
+    imports: [RouterModule],
+    styles: [
+        `
       p {
         font-size: 1.5rem;
       }
     `,
-  ],
-  template: `
+    ],
+    template: `
     <button
       mat-raised-button
       color="primary"
@@ -21,7 +20,7 @@ import { routePaths } from '../appRouteTypes';
     >
       Add a New Employee
     </button>
-  `,
+  `
 })
 export class RedirectRouteComponent {
   routePaths = routePaths;

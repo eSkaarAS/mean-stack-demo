@@ -8,19 +8,18 @@ import { RedirectRouteComponent } from './angular-tutorial/redirect-route-compon
 import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    MatToolbarModule,
-    InputComponent,
-    OutputComponent,
-    OptimizeImageComponent,
-    RedirectRouteComponent,
-    ShareHoldersTableComponent,
-  ],
-  styles: [
-    `
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        MatToolbarModule,
+        InputComponent,
+        OutputComponent,
+        OptimizeImageComponent,
+        RedirectRouteComponent,
+        ShareHoldersTableComponent,
+    ],
+    styles: [
+        `
       main {
         display: flex;
         justify-content: center;
@@ -35,8 +34,8 @@ import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable
         gap: 1rem;
       }
     `,
-  ],
-  template: `
+    ],
+    template: `
     <mat-toolbar>
       <span>Employees Management System</span>
     </mat-toolbar>
@@ -53,7 +52,7 @@ import { ShareHoldersTableComponent } from './angular-tutorial/shareHoldersTable
         <redirect-route-component />
       </div>
     </main>
-  `,
+  `
 })
 export class AppComponent {
   title = 'client';

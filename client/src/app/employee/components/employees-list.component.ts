@@ -7,11 +7,10 @@ import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
 @Component({
-  selector: 'app-employees-list',
-  standalone: true,
-  imports: [RouterModule, MatTableModule, MatButtonModule, MatCardModule],
-  styles: [
-    `
+    selector: 'app-employees-list',
+    imports: [RouterModule, MatTableModule, MatButtonModule, MatCardModule],
+    styles: [
+        `
       table {
         width: 100%;
 
@@ -20,8 +19,8 @@ import { EmployeeService } from '../employee.service';
         }
       }
     `,
-  ],
-  template: `
+    ],
+    template: `
     <mat-card>
       <mat-card-header>
         <mat-card-title>Employees List</mat-card-title>
@@ -66,7 +65,7 @@ import { EmployeeService } from '../employee.service';
         </button>
       </mat-card-actions>
     </mat-card>
-  `,
+  `
 })
 export class EmployeesListComponent implements OnInit {
   employees$ = {} as WritableSignal<Employee[]>;

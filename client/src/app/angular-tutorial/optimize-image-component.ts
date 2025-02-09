@@ -2,10 +2,9 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'optimize-image-component',
-  standalone: true,
-  styles: [
-    `
+    selector: 'optimize-image-component',
+    styles: [
+        `
       .image-test {
         position: relative;
         background-color: blue;
@@ -13,8 +12,8 @@ import { Component } from '@angular/core';
         border-radius: 5px;
       }
     `,
-  ],
-  template: `
+    ],
+    template: `
     <p>Username: {{ username }}</p>
     <p>Preferred Framework:</p>
     <ul>
@@ -37,7 +36,7 @@ import { Component } from '@angular/core';
       </li>
     </ul>
   `,
-  imports: [NgOptimizedImage],
+    imports: [NgOptimizedImage]
 })
 export class OptimizeImageComponent {
   logoUrl = '/assets/logo.svg';
