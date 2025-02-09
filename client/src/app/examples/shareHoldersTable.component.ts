@@ -10,8 +10,8 @@ export interface Dessert {
 }
 
 @Component({
-    selector: 'app-shareHolder-table',
-    template: ` <table matSort (matSortChange)="sortData($event)">
+  selector: 'app-shareHolder-table',
+  template: ` <table mat-table matSort (matSortChange)="sortData($event)">
     <thead>
       <tr>
         <th mat-sort-header="name">Dessert (100g)</th>
@@ -34,7 +34,7 @@ export interface Dessert {
       }
     </tbody>
   </table>`,
-    styles: `
+  styles: `
     tr {
       background-color: white;
       color: black;
@@ -46,7 +46,7 @@ export interface Dessert {
       align-items: center;
     }
   `,
-    imports: [MatSortModule]
+  imports: [MatSortModule],
 })
 export class ShareHoldersTableComponent {
   desserts: Dessert[] = [

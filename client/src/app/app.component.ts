@@ -37,7 +37,7 @@ import { ShareHoldersTableComponent } from './examples/shareHoldersTable.compone
   ],
   template: `
     <mat-toolbar>
-      <span>Employees Management System</span>
+      <span class=" text-3xl">Employees Management System</span>
     </mat-toolbar>
     <main>
       <div class="flexDiv">
