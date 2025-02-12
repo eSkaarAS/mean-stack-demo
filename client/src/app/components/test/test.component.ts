@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
+import { TestPipe } from '../../pipes/test.pipe';
 
 @Component({
   selector: 'app-test',
-  imports: [],
-  templateUrl: './test.component.html'
+  imports: [TestPipe],
+  templateUrl: './test.component.html',
 })
-export class TestComponent {
-
-}
+export class TestComponent {}
