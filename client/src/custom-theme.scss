@@ -12,24 +12,136 @@ html {
       ),
       typography: Roboto,
       density: 0,
+      sidenav-container-shape: 0,
+      sys-corner-large: 0,
+      protected-button-container-shape: 0,
     )
   );
 }
 
 :root {
+  // --mdc-protected-button-container-shape: 4px;
+  // --md-filled-button-container-shape: 4px;
+  // --mat-protected-button-container-shape: 4px;
   @include mat.card-overrides(
     (
-      subtitle-text-color: orange,
       title-text-size: 24px,
     )
   );
+  @include mat.button-overrides(
+    (
+      filled-container-shape: 0,
+      outlined-container-shape: 0,
+      protected-container-shape: 0,
+      text-container-shape: 0,
+    )
+  );
 }
+
+// if you type wrong value in the override----> it will not work, but you will get the list of available tokens
+/**
+filled-container-shape
+ filled-keep-touch-target
+ filled-container-color
+ filled-label-text-color
+ filled-disabled-container-color
+ filled-disabled-label-text-color
+ filled-label-text-font
+ filled-label-text-size
+ filled-label-text-tracking
+ filled-label-text-weight
+ filled-label-text-transform
+ filled-container-height
+ filled-horizontal-padding
+ filled-icon-spacing
+ filled-icon-offset
+ filled-state-layer-color
+ filled-disabled-state-layer-color
+ filled-ripple-color
+ filled-hover-state-layer-opacity
+ filled-focus-state-layer-opacity
+ filled-pressed-state-layer-opacity
+ filled-touch-target-display
+ outlined-keep-touch-target
+ outlined-outline-width
+ outlined-container-shape
+ outlined-disabled-outline-color
+ outlined-disabled-label-text-color
+ outlined-label-text-color
+ outlined-outline-color
+ outlined-label-text-font
+ outlined-label-text-size
+ outlined-label-text-tracking
+ outlined-label-text-weight
+ outlined-label-text-transform
+ outlined-container-height
+ outlined-horizontal-padding
+ outlined-icon-spacing
+ outlined-icon-offset
+ outlined-state-layer-color
+ outlined-disabled-state-layer-color
+ outlined-ripple-color
+ outlined-hover-state-layer-opacity
+ outlined-focus-state-layer-opacity
+ outlined-pressed-state-layer-opacity
+ outlined-touch-target-display
+ protected-container-shape
+ protected-container-elevation-shadow
+ protected-disabled-container-elevation-shadow
+ protected-focus-container-elevation-shadow
+ protected-hover-container-elevation-shadow
+ protected-pressed-container-elevation-shadow
+ protected-container-color
+ protected-label-text-color
+ protected-disabled-container-color
+ protected-disabled-label-text-color
+ protected-label-text-font
+ protected-label-text-size
+ protected-label-text-tracking
+ protected-label-text-weight
+ protected-label-text-transform
+ protected-container-height
+ protected-horizontal-padding
+ protected-icon-spacing
+ protected-icon-offset
+ protected-state-layer-color
+ protected-disabled-state-layer-color
+ protected-ripple-color
+ protected-hover-state-layer-opacity
+ protected-focus-state-layer-opacity
+ protected-pressed-state-layer-opacity
+ protected-touch-target-display
+ text-container-shape
+ text-keep-touch-target
+ text-label-text-color
+ text-disabled-label-text-color
+ text-label-text-font
+ text-label-text-size
+ text-label-text-tracking
+ text-label-text-weight
+ text-label-text-transform
+ text-container-height
+ text-horizontal-padding
+ text-with-icon-horizontal-padding
+ text-icon-spacing
+ text-icon-offset
+ text-state-layer-color
+ text-disabled-state-layer-color
+ text-ripple-color
+ text-hover-state-layer-opacity
+ text-focus-state-layer-opacity
+ text-pressed-state-layer-opacity
+ text-touch-target-display
+*/
 
 :root {
   @include mat.table-overrides(());
 }
 
-// Customize the entire app. Change :root to your selector if you want to scope the styles.
 :root {
-  @include mat.sidenav-overrides(());
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: rgb(255 255 235),
+    )
+  );
 }

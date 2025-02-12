@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterOutlet } from '@angular/router';
-import { DemoSidebar } from './layout/sidebar.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { DemoSidebar } from './layout/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatToolbarModule, DemoSidebar],
+  imports: [RouterOutlet, MatToolbarModule, DemoSidebar, MainLayoutComponent],
   styles: [
     `
       main {
@@ -25,7 +26,9 @@ import { DemoSidebar } from './layout/sidebar.component';
   ],
   template: `
     <demo-sidebar>
-      <router-outlet></router-outlet>
+      <app-main-layout>
+        <router-outlet></router-outlet>
+      </app-main-layout>
     </demo-sidebar>
   `,
 })
