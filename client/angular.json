@@ -10,7 +10,7 @@
           "inlineStyle": false,
           "inlineTemplate": false,
           "standalone": true,
-          "style": "scss"
+          "style": "none"
         }
       },
       "root": "",

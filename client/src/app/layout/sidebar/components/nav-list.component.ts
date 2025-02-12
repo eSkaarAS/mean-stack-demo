@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LinkElementComponent } from './link-element/link-element.component';
+import { LinkElementComponent } from './link-element.component';
 
 @Component({
   selector: 'sidebar-nav-list',

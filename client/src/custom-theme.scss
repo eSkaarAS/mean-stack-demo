@@ -20,9 +20,20 @@ html {
 }
 
 :root {
-  // --mdc-protected-button-container-shape: 4px;
-  // --md-filled-button-container-shape: 4px;
-  // --mat-protected-button-container-shape: 4px;
+  @include mat.sidenav-overrides(
+    (
+      container-background-color: rgb(255 255 235),
+      container-shape: 0,
+      // container-elevation-shadow
+      // container-width
+      // container-divider-color
+      // container-background-color
+      // container-text-color
+      // content-background-color
+      // content-text-color,,,,,,,,,
+    )
+  );
+
   @include mat.card-overrides(
     (
       title-text-size: 24px,
@@ -30,118 +41,154 @@ html {
   );
   @include mat.button-overrides(
     (
-      filled-container-shape: 0,
-      outlined-container-shape: 0,
-      protected-container-shape: 0,
-      text-container-shape: 0,
+      filled-container-shape: 4px,
+      // filled-keep-touch-target
+      // filled-container-color
+      // filled-label-text-color
+      // filled-disabled-container-color
+      // filled-disabled-label-text-color
+      // filled-label-text-font
+      // filled-label-text-size
+      // filled-label-text-tracking
+      // filled-label-text-weight
+      // filled-label-text-transform
+      // filled-container-height
+      // filled-horizontal-padding
+      // filled-icon-spacing
+      // filled-icon-offset
+      // filled-state-layer-color
+      // filled-disabled-state-layer-color
+      // filled-ripple-color
+      // filled-hover-state-layer-opacity
+      // filled-focus-state-layer-opacity
+      // filled-pressed-state-layer-opacity
+      // filled-touch-target-display
+      // outlined-keep-touch-target
+      // outlined-outline-width
+      outlined-container-shape: 4px,
+      // outlined-disabled-outline-color
+      // outlined-disabled-label-text-color
+      // outlined-label-text-color
+      // outlined-outline-color
+      // outlined-label-text-font
+      // outlined-label-text-size
+      // outlined-label-text-tracking
+      // outlined-label-text-weight
+      // outlined-label-text-transform
+      // outlined-container-height
+      // outlined-horizontal-padding
+      // outlined-icon-spacing
+      // outlined-icon-offset
+      // outlined-state-layer-color
+      // outlined-disabled-state-layer-color
+      // outlined-ripple-color
+      // outlined-hover-state-layer-opacity
+      // outlined-focus-state-layer-opacity
+      // outlined-pressed-state-layer-opacity
+      // outlined-touch-target-display
+      protected-container-shape: 4px,
+      // protected-container-elevation-shadow
+      // protected-disabled-container-elevation-shadow
+      // protected-focus-container-elevation-shadow
+      // protected-hover-container-elevation-shadow
+      // protected-pressed-container-elevation-shadow
+      // protected-container-color
+      // protected-label-text-color
+      // protected-disabled-container-color
+      // protected-disabled-label-text-color
+      // protected-label-text-font
+      // protected-label-text-size
+      // protected-label-text-tracking
+      // protected-label-text-weight
+      // protected-label-text-transform
+      // protected-container-height
+      // protected-horizontal-padding
+      // protected-icon-spacing
+      // protected-icon-offset
+      // protected-state-layer-color
+      // protected-disabled-state-layer-color
+      // protected-ripple-color
+      // protected-hover-state-layer-opacity
+      // protected-focus-state-layer-opacity
+      // protected-pressed-state-layer-opacity
+      // protected-touch-target-display
+      text-container-shape: 4px,
+      // text-keep-touch-target
+      // text-label-text-color
+      // text-disabled-label-text-color
+      // text-label-text-font
+      // text-label-text-size
+      // text-label-text-tracking
+      // text-label-text-weight
+      // text-label-text-transform
+      // text-container-height
+      // text-horizontal-padding
+      // text-with-icon-horizontal-padding
+      // text-icon-spacing
+      // text-icon-offset
+      // text-state-layer-color
+      // text-disabled-state-layer-color
+      // text-ripple-color
+      // text-hover-state-layer-opacity
+      // text-focus-state-layer-opacity
+      // text-pressed-state-layer-opacity
+      // text-touch-target-display,,,,,,,,,,,,,,,,,,,,
     )
   );
-}
-
-// if you type wrong value in the override----> it will not work, but you will get the list of available tokens
-/**
-filled-container-shape
- filled-keep-touch-target
- filled-container-color
- filled-label-text-color
- filled-disabled-container-color
- filled-disabled-label-text-color
- filled-label-text-font
- filled-label-text-size
- filled-label-text-tracking
- filled-label-text-weight
- filled-label-text-transform
- filled-container-height
- filled-horizontal-padding
- filled-icon-spacing
- filled-icon-offset
- filled-state-layer-color
- filled-disabled-state-layer-color
- filled-ripple-color
- filled-hover-state-layer-opacity
- filled-focus-state-layer-opacity
- filled-pressed-state-layer-opacity
- filled-touch-target-display
- outlined-keep-touch-target
- outlined-outline-width
- outlined-container-shape
- outlined-disabled-outline-color
- outlined-disabled-label-text-color
- outlined-label-text-color
- outlined-outline-color
- outlined-label-text-font
- outlined-label-text-size
- outlined-label-text-tracking
- outlined-label-text-weight
- outlined-label-text-transform
- outlined-container-height
- outlined-horizontal-padding
- outlined-icon-spacing
- outlined-icon-offset
- outlined-state-layer-color
- outlined-disabled-state-layer-color
- outlined-ripple-color
- outlined-hover-state-layer-opacity
- outlined-focus-state-layer-opacity
- outlined-pressed-state-layer-opacity
- outlined-touch-target-display
- protected-container-shape
- protected-container-elevation-shadow
- protected-disabled-container-elevation-shadow
- protected-focus-container-elevation-shadow
- protected-hover-container-elevation-shadow
- protected-pressed-container-elevation-shadow
- protected-container-color
- protected-label-text-color
- protected-disabled-container-color
- protected-disabled-label-text-color
- protected-label-text-font
- protected-label-text-size
- protected-label-text-tracking
- protected-label-text-weight
- protected-label-text-transform
- protected-container-height
- protected-horizontal-padding
- protected-icon-spacing
- protected-icon-offset
- protected-state-layer-color
- protected-disabled-state-layer-color
- protected-ripple-color
- protected-hover-state-layer-opacity
- protected-focus-state-layer-opacity
- protected-pressed-state-layer-opacity
- protected-touch-target-display
- text-container-shape
- text-keep-touch-target
- text-label-text-color
- text-disabled-label-text-color
- text-label-text-font
- text-label-text-size
- text-label-text-tracking
- text-label-text-weight
- text-label-text-transform
- text-container-height
- text-horizontal-padding
- text-with-icon-horizontal-padding
- text-icon-spacing
- text-icon-offset
- text-state-layer-color
- text-disabled-state-layer-color
- text-ripple-color
- text-hover-state-layer-opacity
- text-focus-state-layer-opacity
- text-pressed-state-layer-opacity
- text-touch-target-display
-*/
-
-:root {
-  @include mat.table-overrides(());
-}
-
-:root {
-  @include mat.sidenav-overrides(
+  @include mat.list-overrides(
     (
-      container-background-color: rgb(255 255 235),
+      // active-indicator-color
+      // active-indicator-shape
+      // list-item-leading-icon-start-space
+      // list-item-leading-icon-end-space
+      list-item-container-shape: 4px,
+      // list-item-leading-avatar-shape
+      // list-item-container-color
+      // list-item-selected-container-color
+      // list-item-leading-avatar-color
+      // list-item-leading-icon-size
+      // list-item-leading-avatar-size
+      // list-item-trailing-icon-size
+      // list-item-disabled-state-layer-color
+      // list-item-disabled-state-layer-opacity
+      // list-item-disabled-label-text-opacity
+      // list-item-disabled-leading-icon-opacity
+      // list-item-disabled-trailing-icon-opacity
+      // list-item-label-text-color
+      // list-item-supporting-text-color
+      // list-item-leading-icon-color
+      // list-item-trailing-supporting-text-color
+      // list-item-trailing-icon-color
+      // list-item-selected-trailing-icon-color
+      // list-item-disabled-label-text-color
+      // list-item-disabled-leading-icon-color
+      // list-item-disabled-trailing-icon-color
+      // list-item-hover-label-text-color
+      // list-item-hover-leading-icon-color
+      // list-item-hover-trailing-icon-color
+      // list-item-focus-label-text-color
+      // list-item-hover-state-layer-color
+      // list-item-hover-state-layer-opacity
+      // list-item-focus-state-layer-color
+      // list-item-focus-state-layer-opacity
+      // list-item-label-text-font
+      // list-item-label-text-line-height
+      // list-item-label-text-size
+      // list-item-label-text-tracking
+      // list-item-label-text-weight
+      // list-item-supporting-text-font
+      // list-item-supporting-text-line-height
+      // list-item-supporting-text-size
+      // list-item-supporting-text-tracking
+      // list-item-supporting-text-weight
+      // list-item-trailing-supporting-text-font
+      // list-item-trailing-supporting-text-line-height
+      // list-item-trailing-supporting-text-size
+      // list-item-trailing-supporting-text-tracking
+      // list-item-trailing-supporting-text-weight
+      // list-item-one-line-container-height
+      // list-item-two-line-container-height
+      // list-item-three-line-container-height
     )
   );
 }
