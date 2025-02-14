@@ -6,9 +6,9 @@ export const stringPipes = {
   lowercase: 'lowercase',
 } as const;
 
-type StringPipe = (typeof stringPipes)[keyof typeof stringPipes];
+type StringPipeType = (typeof stringPipes)[keyof typeof stringPipes];
 
-export const object: Record<StringPipe, PipeTransform> = {
+export const object: Record<StringPipeType, PipeTransform> = {
   uppercase: new UpperCasePipe(),
   lowercase: new LowerCasePipe(),
 };
@@ -16,8 +16,8 @@ export const object: Record<StringPipe, PipeTransform> = {
 @Pipe({
   name: 'stringPipe',
 })
-export class TestPipe implements PipeTransform {
-  transform(value: string, pipeOption: StringPipe[]): string {
+export class StringPipe implements PipeTransform {
+  transform(value: string, pipeOption: StringPipeType[]): string {
     const selectedPipe = object[pipeOption[0]];
     const result = selectedPipe.transform(value);
 

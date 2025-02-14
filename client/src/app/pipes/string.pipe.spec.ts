@@ -1,8 +1,8 @@
-import { TestPipe } from './test.pipe';
+import { StringPipe } from './string.pipe';
 
 describe('TestPipe', () => {
   it('create an instance', () => {
-    const pipe = new TestPipe();
+    const pipe = new StringPipe();
     expect(pipe).toBeTruthy();
   });
 });
