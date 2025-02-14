@@ -16,7 +16,6 @@ import { routePaths } from '../../appRouteTypes';
 @Component({
   selector: 'demo-sidebar',
   templateUrl: 'sidebar.component.html',
-  styleUrl: 'sidebar.component.css',
   imports: [
     MatToolbarModule,
     MatButtonModule,

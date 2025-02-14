@@ -28,7 +28,7 @@ html {
       // container-background-color
       // container-text-color
       // content-background-color
-      // content-text-color,,,,,
+      // content-text-color,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     )
   );
 
@@ -37,6 +37,35 @@ html {
       title-text-size: 24px,
     )
   );
+
+  @include mat.table-overrides(
+    (
+      header-headline-color: blue,
+      header-headline-line-height: 100px,
+      header-headline-size: 20px,
+      header-headline-weight: 700,
+      header-headline-tracking: 1px,
+      header-container-height: 100px,
+      // row-item-outline-width: 1px,
+      // row-item-outline-width,
+      // background-color,
+      // row-item-label-text-color,
+      // row-item-outline-color,
+      // row-item-label-text-font,
+      // row-item-label-text-line-height,
+      // row-item-label-text-size,
+      // row-item-label-text-weight,
+      // row-item-label-text-tracking,
+      // footer-supporting-text-font,
+      // footer-supporting-text-line-height,
+      // footer-supporting-text-size,
+      // footer-supporting-text-weight,
+      // footer-supporting-text-tracking,
+      // footer-container-height,
+      // row-item-container-height,,,,,,,,,,,,,,,,,,,,,,
+    )
+  );
+
   @include mat.button-overrides(
     (
       filled-container-shape: 4px,
@@ -130,7 +159,7 @@ html {
       // text-hover-state-layer-opacity
       // text-focus-state-layer-opacity
       // text-pressed-state-layer-opacity
-      // text-touch-target-display,,,,,,
+      // text-touch-target-display,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
     )
   );
   @include mat.list-overrides(

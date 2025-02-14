@@ -1,5 +1,8 @@
-<div class="example-container" [class.example-is-mobile]="isMobile()">
-  <mat-toolbar class="example-toolbar">
+<div
+  class="flex flex-col absolute top-0 bottom-0 right-0 left-0"
+  [class.example-is-mobile]="isMobile()"
+>
+  <mat-toolbar class="example-toolbar fixed sm:static z-10">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -7,11 +10,10 @@
   </mat-toolbar>
 
   <mat-sidenav-container
-    class="example-sidenav-container"
+    class="flex-[1_0_auto] sm:flex-[1] w-full h-full"
     [style.marginTop.px]="isMobile() ? 56 : 0"
   >
     <mat-sidenav
-      class="bg-amber-300"
       #snav
       [opened]="true"
       [mode]="isMobile() ? 'over' : 'side'"

@@ -11,12 +11,12 @@ import { EmployeeService } from '../employee.service';
   imports: [RouterModule, MatTableModule, MatButtonModule, MatCardModule],
   styles: [
     `
-      table {
-        width: 100%;
+      .mat-column-col-action.mat-mdc-header-cell {
+        text-align: start;
+      }
 
-        button:first-of-type {
-          margin-right: 1rem;
-        }
+      .mat-column-col-action.mat-mdc-cell {
+        text-align: center;
       }
     `,
   ],
@@ -25,10 +25,10 @@ import { EmployeeService } from '../employee.service';
       <mat-card-header>
         <mat-card-title>Employees List</mat-card-title>
       </mat-card-header>
-      <mat-card-content>
+      <mat-card-content class=" p-10">
         <table mat-table [dataSource]="employees$()">
           <ng-container matColumnDef="col-name">
-            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <th mat-header-cell *matHeaderCellDef class="bg-red-200">Name</th>
             <td mat-cell *matCellDef="let element">{{ element.name }}</td>
           </ng-container>
           <ng-container matColumnDef="col-position">

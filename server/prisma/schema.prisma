@@ -21,16 +21,14 @@ model employees {
 
 model users {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  v         Int       @map("__v")
-  city      UsersCity
-  email     String
   firstName String
   lastName  String
+  Message   Message[]
 }
 
-
-model Tester {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  age Int
+model Message {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  content String
+  userId  String
+  user    users  @relation(fields: [userId], references: [id])
 }

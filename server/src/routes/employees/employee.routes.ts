@@ -1,5 +1,11 @@
 import * as express from "express";
-import { getEmployee, getEmployeeById, createEmployee, updateEmployee, deleteEmployee } from "./employeeController";
+import {
+  createEmployee,
+  deleteEmployee,
+  getEmployee,
+  getEmployeeById,
+  updateEmployee,
+} from "./employeeController";
 
 export const employeeRouter = express.Router();
 employeeRouter.use(express.json());

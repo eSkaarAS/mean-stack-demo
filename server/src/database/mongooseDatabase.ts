@@ -1,6 +1,8 @@
+import dotenv from "dotenv";
 import * as mongodb from "mongodb";
 import { ServerApiVersion } from "mongodb";
-import { Employee } from "./employee";
+import mongoose from "mongoose";
+import { Employee } from "../employee";
 
 export const collections: {
   employees?: mongodb.Collection<Employee>;
@@ -63,4 +65,26 @@ async function applySchemaValidation(db: mongodb.Db) {
         await db.createCollection("employees", { validator: jsonSchema });
       }
     });
+}
+
+export function startMongooseDatabase() {
+  dotenv.config();
+
+  // Connect to MongoDB via mongoose
+  const { ATLAS_URI } = process.env;
+
+  if (!ATLAS_URI) {
+    console.error(
+      "No ATLAS_URI environment variable has been defined in config.env"
+    );
+    process.exit(1);
+  }
+
+  mongoose
+    .connect(ATLAS_URI, {
+      dbName: "meanStackExample",
+    })
+    .then(() => console.log("Connected!"));
+
+  connectToDatabase(ATLAS_URI).catch((error) => console.error(error));
 }
