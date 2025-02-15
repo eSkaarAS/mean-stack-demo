@@ -2,11 +2,11 @@
   class="flex flex-col absolute top-0 bottom-0 right-0 left-0"
   [class.example-is-mobile]="isMobile()"
 >
-  <mat-toolbar class="example-toolbar fixed sm:static z-10">
+  <mat-toolbar class="fixed sm:static z-10 border-b-1">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name">Responsive App</h1>
+    <h1>Responsive App</h1>
   </mat-toolbar>
 
   <mat-sidenav-container

@@ -1,5 +1,5 @@
-import { Component, input, signal } from '@angular/core';
-import { RoutePath, routePaths } from '../../../appRouteTypes';
+import { Component, input } from '@angular/core';
+import { RoutePath } from '../../../appRouteTypes';
 
 @Component({
   selector: 'app-link-element',
@@ -8,6 +8,6 @@ import { RoutePath, routePaths } from '../../../appRouteTypes';
   }}</a>`,
 })
 export class LinkElementComponent {
-  href = signal<RoutePath>(routePaths.home);
+  href = input.required<RoutePath>();
   title = input.required<string>();
 }

@@ -21,14 +21,14 @@ $compact-theme: mat.define-theme(
   @include mat.list-overrides(
     (
       list-item-container-shape: $mat-sys-corner-extra-small,
-      list-item-container-color: red,
     )
   );
 
   @include mat.sidenav-overrides(
     (
-      container-background-color: $mat-sys-corner-extra-small,
+      container-background-color: $mat-sys-background,
       container-shape: $mat-sys-corner-none,
+      container-divider-color: black,
     )
   );
 
