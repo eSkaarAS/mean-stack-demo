@@ -1,4 +1,250 @@
 @import "tailwindcss";
+@import "./theme.css";
+
+@theme {
+  /* Primary palette variables */
+  --color-primary: var(--mat-sys-primary);
+  --color-on-primary: var(--mat-sys-on-primary);
+  --color-primary-container: var(--mat-sys-primary-container);
+  --color-on-primary-container: var(--mat-sys-on-primary-container);
+  --color-inverse-primary: var(--mat-sys-inverse-primary);
+  --color-primary-fixed: var(--mat-sys-primary-fixed);
+  --color-primary-fixed-dim: var(--mat-sys-primary-fixed-dim);
+  --color-on-primary-fixed: var(--mat-sys-on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--mat-sys-on-primary-fixed-variant);
+
+  /* Secondary palette variables */
+  --color-secondary: var(--mat-sys-secondary);
+  --color-on-secondary: var(--mat-sys-on-secondary);
+  --color-secondary-container: var(--mat-sys-secondary-container);
+  --color-on-secondary-container: var(--mat-sys-on-secondary-container);
+  --color-secondary-fixed: var(--mat-sys-secondary-fixed);
+  --color-secondary-fixed-dim: var(--mat-sys-secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--mat-sys-on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--mat-sys-on-secondary-fixed-variant);
+
+  /* Tertiary palette variables */
+  --color-tertiary: var(--mat-sys-tertiary);
+  --color-on-tertiary: var(--mat-sys-on-tertiary);
+  --color-tertiary-container: var(--mat-sys-tertiary-container);
+  --color-on-tertiary-container: var(--mat-sys-on-tertiary-container);
+  --color-tertiary-fixed: var(--mat-sys-tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--mat-sys-tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--mat-sys-on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--mat-sys-on-tertiary-fixed-variant);
+
+  /* Neutral palette variables */
+  --color-background: var(--mat-sys-background);
+  --color-on-background: var(--mat-sys-on-background);
+  --color-surface: var(--mat-sys-surface);
+  --color-surface-dim: var(--mat-sys-surface-dim);
+  --color-surface-bright: var(--mat-sys-surface-bright);
+  --color-surface-container-low: var(--mat-sys-surface-container-low);
+  --color-surface-container-lowest: var(--mat-sys-surface-container-lowest);
+  --color-surface-container: var(--mat-sys-surface-container);
+  --color-surface-container-high: var(--mat-sys-surface-container-high);
+  --color-surface-container-highest: var(--mat-sys-surface-container-highest);
+  --color-on-surface: var(--mat-sys-on-surface);
+  --color-shadow: var(--mat-sys-shadow);
+  --color-scrim: var(--mat-sys-scrim);
+  --color-surface-tint: var(--mat-sys-surface-tint);
+  --color-inverse-surface: var(--mat-sys-inverse-surface);
+  --color-inverse-on-surface: var(--mat-sys-inverse-on-surface);
+  --color-outline: var(--mat-sys-outline);
+  --color-outline-variant: var(--mat-sys-outline-variant);
+  --color-neutral10: var(--mat-sys-neutral10);
+  /* Variable used for the form field native select option text color */
+
+  /* Error palette variables */
+  --color-error: var(--mat-sys-error);
+  --color-on-error: var(--mat-sys-on-error);
+  --color-error-container: var(--mat-sys-error-container);
+  --color-on-error-container: var(--mat-sys-on-error-container);
+
+  /* Neutral variant palette variables */
+  --color-surface-variant: var(--mat-sys-surface-variant);
+  --color-on-surface-variant: var(--mat-sys-on-surface-variant);
+  --color-neutral-variant20: var(--mat-sys-neutral-variant20);
+  /* Variable used for the sidenav scrim (container background shadow when opened) */
+
+  /* TYPOGRAPHY SYSTEM VARIABLES */
+
+  /* Typography variables. Only used in the different typescale system variables. */
+  --font-brand-font-family: var(--mat-sys-brand-font-family);
+  --font-plain-font-family: var(--mat-sys-plain-font-family);
+  --font-weight-bold-font-weight: var(--mat-sys-bold-font-weight);
+  --font-weight-medium-font-weight: var(--mat-sys-medium-font-weight);
+  --font-weight-regular-font-weight: var(--mat-sys-regular-font-weight);
+
+  /* Typescale variables.
+  /* Warning: Risk of reduced fidelity from using the composite typography tokens (ex. --mat-sys-body-large) since
+     tracking cannot be represented in the "font" property shorthand. Consider using the discrete properties instead. */
+  /* --NOT-IMPLEMENTED-body-large: var(--mat-sys-body-large); */
+  /* --NOT-IMPLEMENTED-body-large-font: var(--mat-sys-body-large-font); */
+  /* --NOT-IMPLEMENTED-body-large-line-height: var(--mat-sys-body-large-line-height); */
+  /* --NOT-IMPLEMENTED-body-large-size: var(--mat-sys-body-large-size); */
+  /* --NOT-IMPLEMENTED-body-large-tracking: var(--mat-sys-body-large-tracking); */
+  /* --NOT-IMPLEMENTED-body-large-weight: var(--mat-sys-body-large-weight); */
+
+  /* Body medium typescale */
+  /* --NOT-IMPLEMENTED-body-medium: var(--mat-sys-body-medium); */
+  /* --NOT-IMPLEMENTED-body-medium-font: var(--mat-sys-body-medium-font); */
+  /* --NOT-IMPLEMENTED-body-medium-line-height: var(--mat-sys-body-medium-line-height); */
+  /* --NOT-IMPLEMENTED-body-medium-size: var(--mat-sys-body-medium-size); */
+  /* --NOT-IMPLEMENTED-body-medium-tracking: var(--mat-sys-body-medium-tracking); */
+  /* --NOT-IMPLEMENTED-body-medium-weight: var(--mat-sys-body-medium-weight); */
+
+  /* Body small typescale */
+  /* --NOT-IMPLEMENTED-body-small: var(--mat-sys-body-small); */
+  /* --NOT-IMPLEMENTED-body-small-font: var(--mat-sys-body-small-font); */
+  /* --NOT-IMPLEMENTED-body-small-line-height: var(--mat-sys-body-small-line-height); */
+  /* --NOT-IMPLEMENTED-body-small-size: var(--mat-sys-body-small-size); */
+  /* --NOT-IMPLEMENTED-body-small-tracking: var(--mat-sys-body-small-tracking); */
+  /* --NOT-IMPLEMENTED-body-small-weight: var(--mat-sys-body-small-weight); */
+
+  /* Display large typescale */
+  /* --NOT-IMPLEMENTED-display-large: var(--mat-sys-display-large); */
+  /* --NOT-IMPLEMENTED-display-large-font: var(--mat-sys-display-large-font); */
+  /* --NOT-IMPLEMENTED-display-large-line-height: var(--mat-sys-display-large-line-height); */
+  /* --NOT-IMPLEMENTED-display-large-size: var(--mat-sys-display-large-size); */
+  /* --NOT-IMPLEMENTED-display-large-tracking: var(--mat-sys-display-large-tracking); */
+  /* --NOT-IMPLEMENTED-display-large-weight: var(--mat-sys-display-large-weight); */
+
+  /* Display medium typescale */
+  /* --NOT-IMPLEMENTED-display-medium: var(--mat-sys-display-medium); */
+  /* --NOT-IMPLEMENTED-display-medium-font: var(--mat-sys-display-medium-font); */
+  /* --NOT-IMPLEMENTED-display-medium-line-height: var(--mat-sys-display-medium-line-height); */
+  /* --NOT-IMPLEMENTED-display-medium-size: var(--mat-sys-display-medium-size); */
+  /* --NOT-IMPLEMENTED-display-medium-tracking: var(--mat-sys-display-medium-tracking); */
+  /* --NOT-IMPLEMENTED-display-medium-weight: var(--mat-sys-display-medium-weight); */
+
+  /* Display small typescale */
+  /* --NOT-IMPLEMENTED-display-small: var(--mat-sys-display-small); */
+  /* --NOT-IMPLEMENTED-display-small-font: var(--mat-sys-display-small-font); */
+  /* --NOT-IMPLEMENTED-display-small-line-height: var(--mat-sys-display-small-line-height); */
+  /* --NOT-IMPLEMENTED-display-small-size: var(--mat-sys-display-small-size); */
+  /* --NOT-IMPLEMENTED-display-small-tracking: var(--mat-sys-display-small-tracking); */
+  /* --NOT-IMPLEMENTED-display-small-weight: var(--mat-sys-display-small-weight); */
+
+  /* Headline large typescale */
+  /* --NOT-IMPLEMENTED-headline-large: var(--mat-sys-headline-large); */
+  /* --NOT-IMPLEMENTED-headline-large-font: var(--mat-sys-headline-large-font); */
+  /* --NOT-IMPLEMENTED-headline-large-line-height: var(--mat-sys-headline-large-line-height); */
+  /* --NOT-IMPLEMENTED-headline-large-size: var(--mat-sys-headline-large-size); */
+  /* --NOT-IMPLEMENTED-headline-large-tracking: var(--mat-sys-headline-large-tracking); */
+  /* --NOT-IMPLEMENTED-headline-large-weight: var(--mat-sys-headline-large-weight); */
+
+  /* Headline medium typescale */
+  /* --NOT-IMPLEMENTED-headline-medium: var(--mat-sys-headline-medium); */
+  /* --NOT-IMPLEMENTED-headline-medium-font: var(--mat-sys-headline-medium-font); */
+  /* --NOT-IMPLEMENTED-headline-medium-line-height: var( */
+  /* --mat-sys-headline-medium-line-height
+  ); */
+  /* --NOT-IMPLEMENTED-headline-medium-size: var(--mat-sys-headline-medium-size); */
+  /* --NOT-IMPLEMENTED-headline-medium-tracking: var(--mat-sys-headline-medium-tracking); */
+  /* --NOT-IMPLEMENTED-headline-medium-weight: var(--mat-sys-headline-medium-weight); */
+
+  /* Headline small typescale */
+  /* --NOT-IMPLEMENTED-headline-small: var(--mat-sys-headline-small); */
+  /* --NOT-IMPLEMENTED-headline-small-font: var(--mat-sys-headline-small-font); */
+  /* --NOT-IMPLEMENTED-headline-small-line-height: var(--mat-sys-headline-small-line-height); */
+  /* --NOT-IMPLEMENTED-headline-small-size: var(--mat-sys-headline-small-size); */
+  /* --NOT-IMPLEMENTED-headline-small-tracking: var(--mat-sys-headline-small-tracking); */
+  /* --NOT-IMPLEMENTED-headline-small-weight: var(--mat-sys-headline-small-weight); */
+
+  /* Label large typescale */
+  /* --NOT-IMPLEMENTED-label-large: var(--mat-sys-label-large); */
+  /* --NOT-IMPLEMENTED-label-large-font: var(--mat-sys-label-large-font); */
+  /* --NOT-IMPLEMENTED-label-large-line-height: var(--mat-sys-label-large-line-height); */
+  /* --NOT-IMPLEMENTED-label-large-size: var(--mat-sys-label-large-size); */
+  /* --NOT-IMPLEMENTED-label-large-tracking: var(--mat-sys-label-large-tracking); */
+  /* --NOT-IMPLEMENTED-label-large-weight: var(--mat-sys-label-large-weight); */
+  /* --NOT-IMPLEMENTED-label-large-weight-prominent: var( */
+  /* --mat-sys-label-large-weight-prominent
+  ); */
+
+  /* Label medium typescale */
+  /* --NOT-IMPLEMENTED-label-medium: var(--mat-sys-label-medium); */
+  /* --NOT-IMPLEMENTED-label-medium-font: var(--mat-sys-label-medium-font); */
+  /* --NOT-IMPLEMENTED-label-medium-line-height: var(--mat-sys-label-medium-line-height); */
+  /* --NOT-IMPLEMENTED-label-medium-size: var(--mat-sys-label-medium-size); */
+  /* --NOT-IMPLEMENTED-label-medium-tracking: var(--mat-sys-label-medium-tracking); */
+  /* --NOT-IMPLEMENTED-label-medium-weight: var(--mat-sys-label-medium-weight); */
+  /* --NOT-IMPLEMENTED-label-medium-weight-prominent: var( */
+  /* --mat-sys-label-medium-weight-prominent
+  ); */
+
+  /* Label small typescale */
+  /* --NOT-IMPLEMENTED-label-small: var(--mat-sys-label-small); */
+  /* --NOT-IMPLEMENTED-label-small-font: var(--mat-sys-label-small-font); */
+  /* --NOT-IMPLEMENTED-label-small-line-height: var(--mat-sys-label-small-line-height); */
+  /* --NOT-IMPLEMENTED-label-small-size: var(--mat-sys-label-small-size); */
+  /* --NOT-IMPLEMENTED-label-small-tracking: var(--mat-sys-label-small-tracking); */
+  /* --NOT-IMPLEMENTED-label-small-weight: var(--mat-sys-label-small-weight); */
+
+  /* Title large typescale */
+  /* --NOT-IMPLEMENTED-title-large: var(--mat-sys-title-large); */
+  /* --NOT-IMPLEMENTED-title-large-font: var(--mat-sys-title-large-font); */
+  /* --NOT-IMPLEMENTED-title-large-line-height: var(--mat-sys-title-large-line-height); */
+  /* --NOT-IMPLEMENTED-title-large-size: var(--mat-sys-title-large-size); */
+  /* --NOT-IMPLEMENTED-title-large-tracking: var(--mat-sys-title-large-tracking); */
+  /* --NOT-IMPLEMENTED-title-large-weight: var(--mat-sys-title-large-weight); */
+
+  /* Title medium typescale */
+  /* --NOT-IMPLEMENTED-title-medium: var(--mat-sys-title-medium); */
+  /* --NOT-IMPLEMENTED-title-medium-font: var(--mat-sys-title-medium-font); */
+  /* --NOT-IMPLEMENTED-title-medium-line-height: var(--mat-sys-title-medium-line-height); */
+  /* --NOT-IMPLEMENTED-title-medium-size: var(--mat-sys-title-medium-size); */
+  /* --NOT-IMPLEMENTED-title-medium-tracking: var(--mat-sys-title-medium-tracking); */
+  /* --NOT-IMPLEMENTED-title-medium-weight: var(--mat-sys-title-medium-weight); */
+
+  /* Title small typescale */
+  /* --NOT-IMPLEMENTED-title-small: var(--mat-sys-title-small); */
+  /* --NOT-IMPLEMENTED-title-small-font: var(--mat-sys-title-small-font); */
+  /* --NOT-IMPLEMENTED-title-small-line-height: var(--mat-sys-title-small-line-height); */
+  /* --NOT-IMPLEMENTED-title-small-size: var(--mat-sys-title-small-size); */
+  /* --NOT-IMPLEMENTED-title-small-tracking: var(--mat-sys-title-small-tracking); */
+  /* --NOT-IMPLEMENTED-title-small-weight: var(--mat-sys-title-small-weight); */
+
+  /* ELEVATION SYSTEM VARIABLES */
+
+  /* Box shadow colors. Only used in the elevation level system variables. */
+  --shadow-umbra-color: var(--mat-sys-umbra-color);
+  --shadow-penumbra-color: var(--mat-sys-penumbra-color);
+  --shadow-ambient-color: var(--mat-sys-ambient-color);
+
+  /* Elevation level system variables. These are used as the value for box-shadow CSS property. */
+  --shadow-level0: var(--mat-sys-level0);
+  --shadow-level1: var(--mat-sys-level1);
+  --shadow-level2: var(--mat-sys-level2);
+  --shadow-level3: var(--mat-sys-level3);
+  --shadow-level4: var(--mat-sys-level4);
+  --shadow-level5: var(--mat-sys-level5);
+
+  /* SHAPE SYSTEM VARIABLES */
+  --radius-corner-extra-large: var(--mat-sys-corner-extra-large);
+  --radius-corner-extra-large-top: var(--mat-sys-corner-extra-large-top);
+  --radius-corner-extra-small: var(--mat-sys-corner-extra-small);
+  --radius-corner-extra-small-top: var(--mat-sys-corner-extra-small-top);
+  --radius-corner-full: var(--mat-sys-corner-full);
+  --radius-corner-large: var(--mat-sys-corner-large);
+  --radius-corner-large-end: var(--mat-sys-corner-large-end);
+  --radius-corner-large-start: var(--mat-sys-corner-large-start);
+  --radius-corner-large-top: var(--mat-sys-corner-large-top);
+  --radius-corner-medium: var(--mat-sys-corner-medium);
+  --radius-corner-none: var(--mat-sys-corner-none);
+  --radius-corner-small: var(--mat-sys-corner-small);
+
+  /* STATE SYSTEM VARIABLES */
+  /* --color-dragged-state-layer-opacity: var(
+    --mat-sys-dragged-state-layer-opacity
+  );
+  --color-focus-state-layer-opacity: var(--mat-sys-focus-state-layer-opacity);
+  --color-hover-state-layer-opacity: var(--mat-sys-hover-state-layer-opacity);
+  --color-pressed-state-layer-opacity: var(
+    --mat-sys-pressed-state-layer-opacity
+  ); */
+}
 
 html,
 body {
@@ -7,4 +253,8 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-notched-outline__notch {
+  border-right: none;
 }

@@ -23,10 +23,10 @@ import {
   ],
   template: `
     <section
-      class="bg-red-200 w-full h-full max-w-5xl mx-auto flex flex-col justify-center items-center"
+      class=" bg-primary w-full h-full max-w-5xl mx-auto flex flex-col justify-center items-center"
     >
-      <div class="bg-blue-200 w-full h-full"></div>
-      <div class="bg-yellow-200 w-full h-20"></div>
+      <div class="bg-primary w-full h-full"></div>
+      <div class="bg-secondary w-full h-20"></div>
     </section>
   `,
 })

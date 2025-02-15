@@ -7,15 +7,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { Employee } from '../employee';
 
 @Component({
-    selector: 'app-employee-form',
-    imports: [
-        ReactiveFormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatRadioModule,
-        MatButtonModule,
-    ],
-    styles: `
+  selector: 'app-employee-form',
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatButtonModule,
+  ],
+  styles: `
     .employee-form {
       display: flex;
       flex-direction: column;
@@ -29,7 +29,7 @@ import { Employee } from '../employee';
       width: 100%;
     }
   `,
-    template: `
+  template: `
     <form
       class="employee-form"
       autocomplete="off"
@@ -38,7 +38,7 @@ import { Employee } from '../employee';
     >
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Name" formControlName="name" required />
+        <input matInput formControlName="name" required />
         @if (name.invalid) {
         <mat-error>Name must be at least 3 characters long.</mat-error>
         }
@@ -46,12 +46,7 @@ import { Employee } from '../employee';
 
       <mat-form-field>
         <mat-label>Position</mat-label>
-        <input
-          matInput
-          placeholder="Position"
-          formControlName="position"
-          required
-        />
+        <input matInput formControlName="position" required />
         @if (position.invalid) {
         <mat-error>Position must be at least 5 characters long.</mat-error>
         }
@@ -65,6 +60,7 @@ import { Employee } from '../employee';
         <mat-radio-button name="level" value="senior">Senior</mat-radio-button>
       </mat-radio-group>
       <br />
+
       <button
         mat-raised-button
         color="primary"
@@ -74,7 +70,8 @@ import { Employee } from '../employee';
         Add
       </button>
     </form>
-  `
+    <button mat-raised-button color="red" type="">Submit</button>
+  `,
 })
 export class EmployeeFormComponent {
   initialState = input<Employee>();
