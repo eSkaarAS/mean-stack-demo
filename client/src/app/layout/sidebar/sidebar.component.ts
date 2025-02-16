@@ -11,7 +11,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { routePaths } from '../../appRouteTypes';
+import { RoutePath, routePaths } from '../../appRouteTypes';
+
+interface MenuItem {
+  route: RoutePath;
+  label: string;
+  icon: string;
+}
 
 @Component({
   selector: 'demo-sidebar',
@@ -20,13 +26,18 @@ import { routePaths } from '../../appRouteTypes';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatListModule,
     MatSidenavModule,
     MatListModule,
   ],
 })
 export class DemoSidebar implements OnDestroy {
-  protected isMobile = signal(true);
-  protected routePaths = routePaths;
+  protected isMobile = signal(false);
+  menuItems = signal<MenuItem[]>([
+    { route: routePaths.employeesList, label: 'Employees', icon: 'dashboard' },
+    { route: routePaths.addEmployee, label: 'Add Employee', icon: 'person' },
+    { route: routePaths.chat, label: 'Chat', icon: 'chat' },
+  ]);
 
   mobileQuery: MediaQueryList | undefined;
   mobileQueryListener: (() => void) | undefined;

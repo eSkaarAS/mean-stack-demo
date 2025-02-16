@@ -20,10 +20,13 @@
       [fixedInViewport]="isMobile()"
       fixedTopGap="56"
     >
-      <mat-nav-list>
-        <a mat-list-item href="{{ routePaths.employeesList }}">Employee list</a>
-        <a mat-list-item href="{{ routePaths.addEmployee }}">Add Employee</a>
-        <a mat-list-item href="{{ routePaths.chat }}">Chat</a>
+      <mat-nav-list class="flex flex-col gap-2">
+        @for (item of menuItems(); track $index) {
+        <a mat-list-item href="{{ item.route }}">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon
+          ><span matListItemTitle>{{ item.label }}</span>
+        </a>
+        }
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
