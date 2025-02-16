@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,10 +24,4 @@ import { DemoSidebar } from './layout/sidebar/sidebar.component';
     </demo-sidebar>
   `,
 })
-export class AppComponent {
-  opened = signal(true);
-
-  toggleSidebar() {
-    this.opened.update((v) => !v);
-  }
-}
+export class AppComponent {}
