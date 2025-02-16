@@ -70,7 +70,6 @@ import { Employee } from '../employee';
         Add
       </button>
     </form>
-    <button mat-raised-button color="red" type="">Submit</button>
   `,
 })
 export class EmployeeFormComponent {
