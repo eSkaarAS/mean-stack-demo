@@ -1,4 +1,4 @@
-/* Note: Color palettes are generated from primary: #0097a7, secondary: #358abf */
+/* Note: Color palettes are generated from primary: #0097a7, secondary: #f57c00 */
 html {
   /* COLOR SYSTEM VARIABLES */
   color-scheme: light;
@@ -15,14 +15,14 @@ html {
   --mat-sys-on-primary-fixed-variant: light-dark(#004f58, #004f58);
 
   /* Secondary palette variables */
-  --mat-sys-secondary: light-dark(#006493, #8dcdff);
-  --mat-sys-on-secondary: light-dark(#ffffff, #00344f);
-  --mat-sys-secondary-container: light-dark(#cae6ff, #004b70);
-  --mat-sys-on-secondary-container: light-dark(#001e30, #cae6ff);
-  --mat-sys-secondary-fixed: light-dark(#cae6ff, #cae6ff);
-  --mat-sys-secondary-fixed-dim: light-dark(#8dcdff, #8dcdff);
-  --mat-sys-on-secondary-fixed: light-dark(#001e30, #001e30);
-  --mat-sys-on-secondary-fixed-variant: light-dark(#004b70, #004b70);
+  --mat-sys-secondary: light-dark(#964900, #ffb786);
+  --mat-sys-on-secondary: light-dark(#ffffff, #502400);
+  --mat-sys-secondary-container: light-dark(#ffdcc6, #723600);
+  --mat-sys-on-secondary-container: light-dark(#311300, #ffdcc6);
+  --mat-sys-secondary-fixed: light-dark(#ffdcc6, #ffdcc6);
+  --mat-sys-secondary-fixed-dim: light-dark(#ffb786, #ffb786);
+  --mat-sys-on-secondary-fixed: light-dark(#311300, #311300);
+  --mat-sys-on-secondary-fixed-variant: light-dark(#723600, #723600);
 
   /* Tertiary palette variables */
   --mat-sys-tertiary: light-dark(#784d91, #e5b4ff);
@@ -280,7 +280,7 @@ html {
   --mat-sys-corner-extra-large-top: 28px 28px 0 0;
   --mat-sys-corner-extra-small: 4px;
   --mat-sys-corner-extra-small-top: 4px 4px 0 0;
-  --mat-sys-corner-full: 0px;
+  --mat-sys-corner-full: 4px; /* Full rounded corners - are apparently used for list-item border radius... insanity, but it is true */
   --mat-sys-corner-large: 16px;
   --mat-sys-corner-large-end: 0 16px 16px 0;
   --mat-sys-corner-large-start: 16px 0 0 16px;

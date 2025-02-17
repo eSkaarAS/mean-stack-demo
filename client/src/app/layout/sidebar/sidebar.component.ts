@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { RoutePath, routePaths } from '../../appRouteTypes';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 interface MenuItem {
   route: RoutePath;
@@ -36,6 +37,7 @@ interface MenuItem {
     MatSidenavModule,
     MatListModule,
     RouterModule,
+    TranslatePipe,
   ],
 })
 export class DemoSidebar implements OnDestroy {
