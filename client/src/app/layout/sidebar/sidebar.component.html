@@ -1,9 +1,6 @@
-<div
-  class="flex flex-col absolute top-0 bottom-0 right-0 left-0"
-  [class.example-is-mobile]="isMobile()"
->
+<div class="flex flex-col absolute top-0 bottom-0 right-0 left-0">
   <mat-toolbar class="fixed sm:static z-10 border-b-1">
-    <button mat-icon-button (click)="snav.toggle()">
+    <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
     <h1>Responsive App</h1>
@@ -14,17 +11,25 @@
     [style.marginTop.px]="isMobile() ? 56 : 0"
   >
     <mat-sidenav
-      #snav
-      [opened]="true"
+      [opened]="opened()"
       [mode]="isMobile() ? 'over' : 'side'"
       [fixedInViewport]="isMobile()"
       fixedTopGap="56"
     >
       <mat-nav-list class="flex flex-col gap-2">
         @for (item of menuItems(); track $index) {
-        <a mat-list-item href="{{ item.route }}">
-          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon
-          ><span matListItemTitle>{{ item.label }}</span>
+        <a
+          mat-list-item
+          href="{{ item.route }}"
+          routerLink="{{ item.route }}"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [activated]="rla.isActive"
+        >
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          @if (opened()) {
+          <span matListItemTitle>{{ item.label }}</span>
+          }
         </a>
         }
       </mat-nav-list>

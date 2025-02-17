@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 import { RoutePath, routePaths } from '../../appRouteTypes';
 
 interface MenuItem {
@@ -22,6 +23,11 @@ interface MenuItem {
 @Component({
   selector: 'demo-sidebar',
   templateUrl: 'sidebar.component.html',
+  styles: `
+    .mat-drawer {
+      width: 240px;
+    }
+  `,
   imports: [
     MatToolbarModule,
     MatButtonModule,
@@ -29,14 +35,24 @@ interface MenuItem {
     MatListModule,
     MatSidenavModule,
     MatListModule,
+    RouterModule,
   ],
 })
 export class DemoSidebar implements OnDestroy {
+  opened = signal(true);
+  toggleSidebar() {
+    this.opened.update((v) => !v);
+  }
+
   protected isMobile = signal(false);
   menuItems = signal<MenuItem[]>([
     { route: routePaths.employeesList, label: 'Employees', icon: 'dashboard' },
     { route: routePaths.addEmployee, label: 'Add Employee', icon: 'person' },
     { route: routePaths.chat, label: 'Chat', icon: 'chat' },
+    { route: routePaths.academy, label: 'Academy', icon: 'school' },
+    { route: routePaths.meetings, label: 'Meetings', icon: 'calendar_today' },
+    { route: routePaths.messages, label: 'Messages', icon: 'message' },
+    { route: routePaths.owners, label: 'Owners', icon: 'people' },
   ]);
 
   mobileQuery: MediaQueryList | undefined;
