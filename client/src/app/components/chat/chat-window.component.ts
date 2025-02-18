@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'chat-window',
+  selector: 'ob-chat-window',
   styles: [
     `
       .flexDiv {

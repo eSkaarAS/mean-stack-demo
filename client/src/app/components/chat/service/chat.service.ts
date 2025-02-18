@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, signal } from '@angular/core';
 
-type User = {
+interface User {
   id: string;
   firstName: string;
   lastName: string;
-};
+}
 
-type Message = {
+interface Message {
   id: string;
   content: string;
   userId: string;
-};
+}
 
 export type ChatMessage = User & Message;
 
