@@ -17,7 +17,7 @@
       [fixedInViewport]="isMobile()"
       fixedTopGap="56"
     >
-      <mat-nav-list class="flex flex-col gap-2">
+      <mat-nav-list class="flex-col gap-1">
         @for (item of menuItems(); track $index) {
         <a
           mat-list-item
@@ -28,9 +28,7 @@
           [activated]="rla.isActive"
         >
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-          @if (opened()) {
           <span matListItemTitle>{{ item.label }}</span>
-          }
         </a>
         }
       </mat-nav-list>

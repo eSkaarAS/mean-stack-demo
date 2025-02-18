@@ -242,32 +242,26 @@ $compact-theme: mat.define-theme(
 );
 
 :root {
+  .mat-mdc-list-base {
+    display: flex;
+  }
+
   @include mat.list-overrides(
     (
-      // active-indicator-color: $mat-sys-secondary,
-      // list-item-container-color: darkseagreen,
-      // list-item-selected-container-color: mediumorchid,
-      // list-item-leading-avatar-color: sandybrown,
-      // list-item-disabled-state-layer-color: lightblue,
-      // list-item-label-text-color: chocolate,
-      // list-item-supporting-text-color: goldenrod,
-      // list-item-leading-icon-color: firebrick,
-      // list-item-trailing-supporting-text-color: darkkhaki,
-      // list-item-trailing-icon-color: midnightblue,
-      // list-item-selected-trailing-icon-color: seagreen,
-      // list-item-disabled-label-text-color: gray,
-      // list-item-disabled-leading-icon-color: lightslategray,
-      // list-item-disabled-trailing-icon-color: darkgray,
-      // list-item-hover-label-text-color: indigo,
-      // list-item-hover-leading-icon-color: olive,
-      // list-item-hover-trailing-icon-color: maroon,
-      // list-item-focus-label-text-color: teal,
-      // list-item-hover-state-layer-color: palegreen,
-      // list-item-hover-state-layer-opacity: 0.2,
-      // /* Opacity needs a numeric value */ list-item-focus-state-layer-color:
-      //   lightsalmon,
-      // list-item-focus-state-layer-opacity: 0.3
-      //   /* Opacity needs a numeric value */,,,,,
+      active-indicator-color: $mat-sys-secondary-container,
+      list-item-selected-container-color: $mat-sys-primary-container,
+
+      list-item-trailing-supporting-text-color: $mat-sys-secondary,
+      list-item-label-text-color: $mat-sys-secondary,
+
+      list-item-focus-label-text-color: $mat-sys-secondary,
+
+      list-item-leading-icon-color: $mat-sys-primary,
+      list-item-trailing-icon-color: $mat-sys-primary,
+      list-item-selected-trailing-icon-color: $mat-sys-primary,
+
+      list-item-hover-label-text-color: $mat-sys-secondary,
+      list-item-hover-leading-icon-color: $mat-sys-secondary,
     )
   );
 
