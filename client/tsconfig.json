@@ -1,5 +1,6 @@
 {
-  "compileOnSave": false,
+  "include": ["src/**/*"],
+  "compileOnSave": true,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
