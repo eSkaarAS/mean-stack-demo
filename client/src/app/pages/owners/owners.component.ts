@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-owners',
+  selector: 'ob-owners',
   imports: [],
   templateUrl: './owners.component.html',
-  styles: ``
+  styles: ``,
 })
-export class OwnersComponent {
-
-}
+export class OwnersComponent {}

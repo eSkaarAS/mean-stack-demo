@@ -23,10 +23,8 @@ export class ChatService {
   messages = signal<ChatMessage[]>([]);
 
   async fetchMessages() {
-    const messages = await this.http
-      .get<ChatMessage[]>('/api/chat')
-      .subscribe((messages) => {
-        this.messages.set(messages);
-      });
+    await this.http.get<ChatMessage[]>('/api/chat').subscribe((messages) => {
+      this.messages.set(messages);
+    });
   }
 }

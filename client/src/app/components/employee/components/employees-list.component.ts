@@ -7,7 +7,7 @@ import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
 @Component({
-  selector: 'app-employees-list',
+  selector: 'ob-employees-list',
   imports: [RouterModule, MatTableModule, MatButtonModule, MatCardModule],
   styles: [
     `

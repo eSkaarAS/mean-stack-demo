@@ -22,7 +22,7 @@ interface MenuItem {
 }
 
 @Component({
-  selector: 'demo-sidebar',
+  selector: 'ob-demo-sidebar',
   templateUrl: 'sidebar.component.html',
   styles: `
     .mat-drawer {

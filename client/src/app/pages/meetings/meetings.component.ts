@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-meetings',
+  selector: 'ob-meetings',
   imports: [],
   templateUrl: './meetings.component.html',
-  styles: ``
+  styles: ``,
 })
-export class MeetingsComponent {
-
-}
+export class MeetingsComponent {}

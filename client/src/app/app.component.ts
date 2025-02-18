@@ -7,7 +7,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { DemoSidebar } from './layout/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'ob-root',
   imports: [
     RouterOutlet,
     MatToolbarModule,
@@ -17,11 +17,11 @@ import { DemoSidebar } from './layout/sidebar/sidebar.component';
     MatSidenavModule,
   ],
   template: `
-    <demo-sidebar>
-      <app-main-layout>
+    <ob-demo-sidebar>
+      <ob-main-layout>
         <router-outlet></router-outlet>
-      </app-main-layout>
-    </demo-sidebar>
+      </ob-main-layout>
+    </ob-demo-sidebar>
   `,
 })
 export class AppComponent {}

@@ -6,22 +6,22 @@ import { EmployeeService } from '../employee.service';
 import { EmployeeFormComponent } from './employee-form.component';
 
 @Component({
-    selector: 'app-edit-employee',
-    imports: [EmployeeFormComponent, MatCardModule],
-    template: `
+  selector: 'ob-edit-employee',
+  imports: [EmployeeFormComponent, MatCardModule],
+  template: `
     <mat-card>
       <mat-card-header>
         <mat-card-title>Edit an Employee</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <app-employee-form
+        <ob-employee-form
           [initialState]="employee()"
           (formSubmitted)="editEmployee($event)"
-        ></app-employee-form>
+        ></ob-employee-form>
       </mat-card-content>
     </mat-card>
   `,
-    styles: ``
+  styles: ``,
 })
 export class EditEmployeeComponent implements OnInit {
   employee = {} as WritableSignal<Employee>;

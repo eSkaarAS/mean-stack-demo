@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-academy',
+  selector: 'ob-academy',
   imports: [],
   templateUrl: './academy.component.html',
-  styles: ``
+  styles: ``,
 })
-export class AcademyComponent {
-
-}
+export class AcademyComponent {}

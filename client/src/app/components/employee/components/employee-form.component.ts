@@ -7,7 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { Employee } from '../employee';
 
 @Component({
-  selector: 'app-employee-form',
+  selector: 'ob-employee-form',
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,
