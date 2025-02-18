@@ -38,7 +38,7 @@ function getUserModel() {
     },
   };
 
-  return userModel;
+  return userModel as any;
 }
 
 const user = getUserModel();
