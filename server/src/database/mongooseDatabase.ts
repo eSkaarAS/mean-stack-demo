@@ -8,7 +8,7 @@ export const collections: {
   employees?: mongodb.Collection<Employee>;
 } = {};
 
-export async function connectToDatabase(uri: string) {
+async function connectToDatabase(uri: string) {
   const client = new mongodb.MongoClient(uri, {
     serverApi: {
       version: ServerApiVersion.v1,
@@ -84,7 +84,9 @@ export function startMongooseDatabase() {
     .connect(ATLAS_URI, {
       dbName: "meanStackExample",
     })
-    .then(() => console.log("Connected!"));
+    .then(() => {
+      console.log("Connected to Mongoose Database");
+    });
 
   connectToDatabase(ATLAS_URI).catch((error) => console.error(error));
 }
