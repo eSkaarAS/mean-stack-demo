@@ -246,6 +246,24 @@ $compact-theme: mat.define-theme(
     display: flex;
   }
 
+  @include mat.radio-overrides(
+    (
+      // disabled-selected-icon-color: red,
+      // disabled-unselected-icon-color: red,
+      // unselected-hover-icon-color: red,
+      // unselected-focus-icon-color: red,
+      // unselected-icon-color: red,
+      // unselected-pressed-icon-color: red,
+      selected-focus-icon-color: green,
+      selected-icon-color: $mat-sys-secondary,
+      selected-pressed-icon-color: red,
+      // ripple-color: red,
+      // checked-ripple-color: red,
+      // disabled-label-color: red,
+      // label-text-color: red,
+    )
+  );
+
   @include mat.list-overrides(
     (
       active-indicator-color: $mat-sys-secondary-container,
