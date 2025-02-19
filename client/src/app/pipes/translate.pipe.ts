@@ -18,15 +18,18 @@ import {
 })
 export class TranslatePipe implements PipeTransform {
   locale = inject(LOCALE_ID);
-  language = computed(() => this.locale.split('-')[0] as TranslationLanguage);
-  isLanguageSupported = computed(() => {
-    return Object.values(TranslationLanguages).includes(this.language());
+  localeLanguage = computed(
+    () => this.locale.split('-')[0] as TranslationLanguage
+  );
+  isLocaleLanguageSupported = computed(() => {
+    return Object.values(TranslationLanguages).includes(this.localeLanguage());
   });
 
-  transform(key: TranslationKey): string {
-    const targetLanguage = this.isLanguageSupported() ? this.language() : 'en';
+  language = computed(() =>
+    this.isLocaleLanguageSupported() ? this.localeLanguage() : 'en'
+  );
 
-    console.log('coderabbit plz comment on this');
-    return textMappings[key][targetLanguage];
+  transform(key: TranslationKey): string {
+    return textMappings[key][this.language()];
   }
 }
