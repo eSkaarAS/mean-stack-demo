@@ -27,9 +27,15 @@ export class TranslatePipe implements PipeTransform {
   });
 
   transform(key: TranslationKey): string {
+    const test = 213123123;
+
+    const maybe = (test * 10) as any;
+
     // const test = this.isLocaleSupported() as any;
     // console.log('test', test);
     if (!this.isLocaleSupported()) return textMappings[key].en;
-    return textMappings[key][this.language() as TranslationLanguage];
+    return (
+      textMappings[key][this.language() as TranslationLanguage] + '!' + maybe
+    );
   }
 }
