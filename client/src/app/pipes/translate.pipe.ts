@@ -20,7 +20,6 @@ export class TranslatePipe implements PipeTransform {
   locale = inject(LOCALE_ID);
   language = computed(() => this.locale.split('-')[0]);
   isLocaleSupported = computed(() => {
-    console.log('this.language()', this.language());
     return Object.values(TranslationLanguages).includes(
       this.language() as TranslationLanguage
     );
