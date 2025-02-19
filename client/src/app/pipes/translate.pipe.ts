@@ -26,6 +26,7 @@ export class TranslatePipe implements PipeTransform {
   transform(key: TranslationKey): string {
     const targetLanguage = this.isLanguageSupported() ? this.language() : 'en';
 
+    console.log('coderabbit plz comment on this');
     return textMappings[key][targetLanguage];
   }
 }
