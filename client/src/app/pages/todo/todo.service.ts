@@ -9,10 +9,10 @@ export class TodoService {
   trpcClient = trpcClient;
 
   public getUsers() {
-    return this.trpcClient.user.getUsers.query();
+    return this.trpcClient.getUser.query('...');
   }
 
   public getObservableUsers() {
-    return from(this.trpcClient.user.getUsers.query().then((res) => res));
+    return from(this.trpcClient.getUser.query('...'));
   }
 }
