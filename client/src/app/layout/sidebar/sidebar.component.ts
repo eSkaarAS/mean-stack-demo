@@ -55,6 +55,7 @@ export class DemoSidebar implements OnDestroy {
     { route: routePaths.meetings, label: 'Meetings', icon: 'calendar_today' },
     { route: routePaths.messages, label: 'Messages', icon: 'message' },
     { route: routePaths.owners, label: 'Owners', icon: 'people' },
+    { route: routePaths.todo, label: 'Todo', icon: 'people' },
   ]);
 
   mobileQuery: MediaQueryList | undefined;
