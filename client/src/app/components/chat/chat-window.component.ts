@@ -1,7 +1,6 @@
 import {
   Component,
   computed,
-  OnInit,
   Signal,
   signal,
   WritableSignal,
@@ -41,10 +40,7 @@ import { MatRadioModule } from '@angular/material/radio';
     </section>
   `,
 })
-export class ChatWindow implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+export class ChatWindow {
   count: WritableSignal<number> = signal(0);
   doubleCount: Signal<number> = computed(() => this.count() * 2);
 }
