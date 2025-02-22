@@ -1,6 +1,17 @@
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
 import { trpcClient } from '../../trpcClient';
+
+export type ReturnTRPC<T extends () => Promise<unknown>> = Awaited<
+  ReturnType<T>
+>;
+
+// Extract only function keys
+type FunctionKeys<T> = {
+  [K in keyof T]: T[K] extends (...args: unknown[]) => unknown ? K : never;
+}[keyof T];
+
+// Get function names as a string union type
+export type TodoServiceMethodNames = FunctionKeys<TodoService>;
 
 @Injectable({
   providedIn: 'root',
@@ -8,11 +19,7 @@ import { trpcClient } from '../../trpcClient';
 export class TodoService {
   trpcClient = trpcClient;
 
-  public getUsers() {
-    return this.trpcClient.getUser.query('...');
-  }
-
-  public getObservableUsers() {
-    return from(this.trpcClient.getUser.query('...'));
+  getUsers() {
+    return this.trpcClient.user.getUsers.query();
   }
 }

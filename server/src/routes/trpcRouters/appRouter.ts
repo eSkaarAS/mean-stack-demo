@@ -1,6 +1,9 @@
 import { initTRPC } from "@trpc/server";
 import { z } from "zod";
-export const t = initTRPC.create();
+import { TrpcContext } from "../../server";
+import { userRouter } from "./userRouter";
+
+export const t = initTRPC.context<TrpcContext>().create();
 export const appRouter = t.router({
   getUser: t.procedure.input(z.string()).query((opts) => {
     opts.input; // string
@@ -11,6 +14,7 @@ export const appRouter = t.router({
     .mutation(async () => {
       return true;
     }),
+  user: userRouter,
 });
 // export type definition of API
 export type AppRouterNew = typeof appRouter;

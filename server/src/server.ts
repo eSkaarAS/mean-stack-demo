@@ -15,8 +15,8 @@ const createContext = ({
   req,
   res,
 }: trpcExpress.CreateExpressContextOptions) => ({ req, res, db: prisma }); // no context
-type Context = Awaited<ReturnType<typeof createContext>>;
-initTRPC.context<Context>().create();
+export type TrpcContext = Awaited<ReturnType<typeof createContext>>;
+initTRPC.context<TrpcContext>().create();
 
 const app = express();
 app.use(cors());

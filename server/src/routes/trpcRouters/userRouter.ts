@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { t } from "./trpc.routes";
+import { t } from "./appRouter";
 
 export const userRouter = t.router({
   getUsers: t.procedure.query(async ({ ctx }) => {

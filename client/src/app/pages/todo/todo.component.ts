@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { TodoService } from './todo.service';
+import { ReturnTRPC, TodoService } from './todo.service';
 
 @Component({
   selector: 'ob-todos',
@@ -10,7 +10,7 @@ import { TodoService } from './todo.service';
 export class TodosComponent implements OnInit {
   todoService = inject(TodoService);
 
-  users = this.todoService.getObservableUsers();
+  users: ReturnTRPC<TodoService['getUsers']> = [];
 
   async ngOnInit() {
     const users = await this.todoService.getUsers();
