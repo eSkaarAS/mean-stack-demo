@@ -15,18 +15,17 @@ const createContext = ({
   req,
   res,
 }: trpcExpress.CreateExpressContextOptions) => ({ req, res, db: prisma }); // no context
-export type TrpcContext = Awaited<ReturnType<typeof createContext>>;
+type TrpcContext = Awaited<ReturnType<typeof createContext>>;
 initTRPC.context<TrpcContext>().create();
+
+const trpcTest = trpcExpress.createExpressMiddleware({
+  router: appRouter,
+  createContext,
+});
 
 const app = express();
 app.use(cors());
-app.use(
-  "/trpc",
-  trpcExpress.createExpressMiddleware({
-    router: appRouter,
-    createContext,
-  })
-);
+app.use("/trpc", trpcTest);
 
 app.use("/employees", employeeRouter);
 app.use("/chat", employeeRouter);

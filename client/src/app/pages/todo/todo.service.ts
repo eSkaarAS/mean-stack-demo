@@ -19,10 +19,10 @@ export class TodoService {
   trpcClient = trpcClient;
 
   getUsers() {
-    return this.trpcClient.user.getUsers.query();
+    return this.trpcClient.getUsers.query();
   }
 
   tester() {
-    return this.trpcClient.user.createUser.mutate();
+    return this.trpcClient.createUser.mutate({ name: 'Bilbo' });
   }
 }
