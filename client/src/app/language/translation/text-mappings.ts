@@ -1,4 +1,4 @@
-import { TranslationLanguage } from '../locale.service';
+import { TranslationLanguage } from '../language.service';
 
 type TextMappings = Record<string, Record<TranslationLanguage, string>>;
 

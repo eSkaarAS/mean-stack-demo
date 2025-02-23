@@ -3,7 +3,8 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { LanguageService, TranslationLanguage } from './locale.service';
+import { UserInsightService } from '../service/UserInsight.service';
+import { LanguageService, TranslationLanguage } from './language.service';
 import { TranslatePipe } from './translation/translate.pipe';
 
 interface LanguageOption {
@@ -43,6 +44,7 @@ interface LanguageOption {
   `,
 })
 export class LocaleSelectorComponent {
+  userInsightService = inject(UserInsightService);
   languageService = inject(LanguageService);
   selectedLanguage = signal<TranslationLanguage>(
     this.languageService.selectedLanguage()
@@ -54,7 +56,7 @@ export class LocaleSelectorComponent {
   ];
 
   changeLocale(locale: TranslationLanguage) {
-    console.log('changing locale to', locale);
+    this.userInsightService.trackEvent('change-locale', { locale });
     this.languageService.updateLanguage(locale);
     window.location.reload();
   }

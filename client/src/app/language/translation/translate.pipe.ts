@@ -1,5 +1,5 @@
 import { inject, Pipe, PipeTransform, signal } from '@angular/core';
-import { LanguageService, TranslationLanguage } from '../locale.service';
+import { LanguageService, TranslationLanguage } from '../language.service';
 import { textMappings, TranslationKey } from './text-mappings';
 
 @Pipe({
