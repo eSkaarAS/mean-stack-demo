@@ -1,13 +1,16 @@
-export const TranslationLanguages = {
-  en: 'en',
-  nb: 'nb',
-} as const;
-
-export type TranslationLanguage = keyof typeof TranslationLanguages;
+import { TranslationLanguage } from '../locale.service';
 
 type TextMappings = Record<string, Record<TranslationLanguage, string>>;
 
 export const textMappings: TextMappings = {
+  'LocaleSelector.norwegian.label': {
+    en: 'Norwegian',
+    nb: 'Norsk',
+  },
+  'LocaleSelector.english.label': {
+    en: 'English',
+    nb: 'Engelsk',
+  },
   Home: {
     en: 'Orgbrain AS',
     nb: 'Orgbrain AS',
@@ -27,6 +30,10 @@ export const textMappings: TextMappings = {
   'TodoForm.text.error': {
     en: 'This field is required',
     nb: 'Dette feltet er påkrevd',
+  },
+  'TodoForm.submitButton.text': {
+    en: 'Add',
+    nb: 'Legg til',
   },
 } as const;
 

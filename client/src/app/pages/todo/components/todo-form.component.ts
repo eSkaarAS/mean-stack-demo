@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import { TranslatePipe } from '../../../pipes/translation/translate.pipe';
+import { TranslatePipe } from '../../../language/translation/translate.pipe';
 
 interface FormProps {
   text: string;
@@ -37,7 +37,9 @@ interface FormProps {
       </mat-form-field>
       <br />
 
-      <button mat-raised-button type="submit" [class]="'w-40'">Add</button>
+      <button mat-raised-button type="submit" [class]="'w-40'">
+        {{ 'TodoForm.submitButton.text' | translatePipe }}
+      </button>
     </form>
   `,
 })
