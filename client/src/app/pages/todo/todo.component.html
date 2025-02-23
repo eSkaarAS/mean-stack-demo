@@ -13,7 +13,7 @@
         id="isDone"
       />
       <label htmlFor="isDone" class="text-2xl mr-auto">{{ item.text }}</label>
-      <button mat-fab color="red" (click)="deleteTodo({ id: item.id })">
+      <button mat-fab color="warn" (click)="deleteTodo({ id: item.id })">
         <mat-icon>delete</mat-icon>
       </button>
     </div>

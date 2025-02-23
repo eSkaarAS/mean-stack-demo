@@ -72,10 +72,8 @@ export class TodoFormComponent {
   }
 
   submitForm() {
-    console.log('submitForm');
     const { text } = this.todoForm.value;
     if (!text) return;
-    console.log('submitForm', text);
 
     this.formSubmitted.emit({ text });
   }

@@ -21,6 +21,7 @@ import { TodoReturnTypes, TodoService } from './todo.service';
   styles: ``,
 })
 export class TodosComponent implements OnInit {
+  isLoading = signal<boolean>(false);
   todoService = inject(TodoService);
   todos = signal<TodoReturnTypes<'getTodos'>>([]);
   userId = '67a685ecefffacd65cf995c9';
@@ -30,9 +31,11 @@ export class TodosComponent implements OnInit {
   }
 
   async addTodo({ text }: { text: string }) {
-    console.log('addTodo', text);
+    console.log('addTodo', this.isLoading());
+    this.isLoading.set(true);
     await this.todoService.createTodo({ text, userId: this.userId });
     await this.refreshTodos();
+    this.isLoading.set(false);
   }
 
   async toggleTodo({ id, isDone }: { id: string; isDone: boolean }) {
