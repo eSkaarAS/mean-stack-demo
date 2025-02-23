@@ -12,6 +12,22 @@ export const textMappings: TextMappings = {
     en: 'Orgbrain AS',
     nb: 'Orgbrain AS',
   },
+  'Todos.title': {
+    en: 'Todos',
+    nb: 'Gjørmål',
+  },
+  'Todos.hideDone.label': {
+    en: 'Hide done',
+    nb: 'Skjul ferdig',
+  },
+  'TodoForm.text.label': {
+    en: 'Todo',
+    nb: 'Gjørmål',
+  },
+  'TodoForm.text.error': {
+    en: 'This field is required',
+    nb: 'Dette feltet er påkrevd',
+  },
 } as const;
 
 export type TranslationKey = keyof typeof textMappings;

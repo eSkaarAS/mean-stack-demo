@@ -29,7 +29,7 @@ export class TranslatePipe implements PipeTransform {
     this.isLocaleLanguageSupported() ? this.localeLanguage() : 'en'
   );
 
-  transform(key: TranslationKey): string {
+  transform(key: TranslationKey) {
     return textMappings[key][this.language()];
   }
 }
